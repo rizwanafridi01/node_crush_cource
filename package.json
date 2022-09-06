@@ -1,0 +1,24 @@
+ {
+  "name": "node_crush_cource",
+  "version": "1.0.0",
+  "description": "this is just for learning of node js form ninja tutorials",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizwanafridi01/node_crush_cource.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rizwanafridi01/node_crush_cource/issues"
+  },
+  "homepage": "https://github.com/rizwanafridi01/node_crush_cource#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.19"
+  }
+}
