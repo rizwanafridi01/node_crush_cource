@@ -2,27 +2,42 @@ const express = require('express');
 
 const app = express()
 
+
+//// view engine ejs
+
+app.set('view engine','ejs');
+
 app.listen(3000);
 
 
 app.get('/',(req, res) => {
+    const blogs =[
+        {
+            title:'test title', snippet:"this is short Desc"
+        },
+        {
+            title:'test title', snippet:"this is short Desc"
+        }
+    ];
     // res.send('<p>node Mon app</p>');
-    res.sendFile('./views/index.html',{ root: __dirname });
+    res.render('index',{title: 'Home', blogs});
 });
 
 
 app.get('/about',(req, res) => {
-    res.sendFile('./views/about.html',{ root: __dirname});
+    res.render('about',{ title: "About"});
 });
 
 
-
-app.get('about-us', (req, res) => {
-        res.redirect('/about');
+app.get('/blog/create',(req, res) =>{
+    // res.send('<p>dededede</p>')
+     res.render('create',{title:"Create Blog"});
 });
+
+
 
 
 
 app.use((req, res) => {
-    res.status(404).sendFile('./views/404.html', { root:__dirname});
-});
+    res.status(404).render('404',{ title:"404"});
+}); 
